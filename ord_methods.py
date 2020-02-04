@@ -5,20 +5,22 @@ def bubble(a: list):
     length = len(a)
     for i in range(0, length):
         for j in range(0, length):
+            Counter.comparation()
             if a[i] < a[j]:
                 print(f"{a}\nswap({a[i]},{a[j]})")
                 a[j], a[i] = a[i], a[j]
-                Counter.plus()
+                Counter.assignment()
 
 
 def bubble2(a: list):
     length = len(a)
     for i in range(0, length):
         for j in range(i, length):
+            Counter.comparation()
             if a[i] > a[j]:
                 print(f"{a}\nswap({a[i]},{a[j]})")
                 a[j], a[i] = a[i], a[j]
-                Counter.plus()
+                Counter.assignment()
 
 
 def straight(a: list):
@@ -26,12 +28,14 @@ def straight(a: list):
     for i in range(0, length):
         p = i
         for j in range(i+1, length):
+            Counter.comparation()
             if a[j] < a[p]:
                 p = j
+        Counter.comparation()
         if p != i:
             print(f"{a}\nswap({a[p]},{a[i]})")
             a[i], a[p] = a[p], a[i]
-            Counter.plus()
+            Counter.assignment()
 
 
 def insertion(a: list):
@@ -41,11 +45,12 @@ def insertion(a: list):
         p = i
         print(f"{a}\ninsertion({aux})")
         while p >= 1 and aux < a[p-1]:
+            Counter.comparation()
             a[p] = a[p-1]
+            Counter.assignment()
             p -= 1
-            Counter.plus()
         a[p] = aux
-        Counter.plus()
+        Counter.assignment()
 
 
 def shell(a: list):
@@ -57,11 +62,13 @@ def shell(a: list):
             aux = a[current]
             i = current - inc
             while i >= 0 and aux < a[i]:
+                Counter.comparation()
                 a[i+inc] = a[i]
+                Counter.assignment()
                 print(f"{a}\naux:{aux} swap({a[i]},{aux})")
                 i -= inc
             a[i+inc] = aux
-            Counter.plus()
+            Counter.assignment()
             current += 1
         inc //= 2
 
@@ -86,20 +93,22 @@ def partition(a: list, left, right):
 
     while not done:
         while a[p_left] < pivot:
+            Counter.comparation()
             p_left += 1
         while a[p_right] > pivot:
+            Counter.comparation()
             p_right -= 1
         if p_left > p_right:
             done = True
         else:
             print(f"{a}\nswap({a[p_left]},{a[p_right]})")
-            Counter.plus()
             a[p_left], a[p_right] = a[p_right], a[p_left]
+            Counter.assignment()
             p_left += 1
             p_right -= 1
             if p_left > p_right:
                 done = True
-    Counter.plus()
     print(f"{a}\nswap({a[p_left]},{a[right]})")
     a[p_left], a[right] = a[right], a[p_left]
+    Counter.assignment()
     return p_left
