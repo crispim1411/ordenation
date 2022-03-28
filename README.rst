@@ -19,9 +19,9 @@ Utilização
 
 * Options:
 
-    * -n INTEGER              Número de itens na lista randômica (default 10)
-    * -in, --input-list TEXT  Array de entrada no formato [a,b,c]
-    * --help                  Show this message and exit.
+    * -n                 Número de itens na lista randômica (default 10)
+    * --input-list       Array de entrada no formato [a,b,c]
+    * --help             Show this message and exit.
 
 * Methods:
     - bubble
